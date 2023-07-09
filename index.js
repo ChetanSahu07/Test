@@ -2,7 +2,7 @@ var n = document.querySelectorAll(".box").length;
 
 function fill(){
     for( var i=0 ; i<n ; i++ ){
-        document.querySelectorAll(".box")[i].value="-" ;
+        document.querySelectorAll(".box")[i].value= 0 ;
     }
 }
 
@@ -14,14 +14,13 @@ let arr = [] ;
 
 function upload(){
     var m = 0 ;
-for( var i=0 ; i<9 ; i++ ){
-    arr[i] = [] ;
-    for( var j=0 ; j<9 ; j++ ){
-        var val = document.querySelectorAll(".box")[m].value ;
-        m++;
-        arr[i][j] = val ;
+    for( var i=0 ; i<9 ; i++ ){
+        arr[i] = [] ;
+        for( var j=0 ; j<9 ; j++ ){
+            arr[i][j] = document.querySelectorAll(".box")[m].value ;
+            m++;
+        }
     }
-}
     if( valid() ){
         alert("Valid Sudoku") ;
     }
@@ -33,24 +32,24 @@ for( var i=0 ; i<9 ; i++ ){
 function check( r , c){
     var num = arr[r][c] ;
         for( var i=r-1 ; i>=0 ; i-- ){
-            if( arr[i][c]===num ){  return false ; }
+            if( arr[i][c]==num ){  return false ; }
         }
         for( var i=r+1 ; i<9 ; i++ ){
-            if( arr[i][c]===num ){ return false ; }
+            if( arr[i][c]==num ){ return false ; }
         }
         for( var j=c-1 ; j>=0 ; j-- ){
-            if( arr[r][j]===num ){ return false ; }
+            if( arr[r][j]==num ){ return false ; }
         }
         for( var j=c+1 ; j<9 ; j++ ){
-            if( arr[r][j]===num ){ return false ; }
+            if( arr[r][j]==num ){ return false ; }
         }
         var newr = Math.floor(r/3) ;
         var newc = Math.floor(c/3) ;
 
         for( var i=newr*3 ; i<=(newr*3 + 2 ) ; i++ ){
             for( var j=newc*3 ; j<=(newc*3 + 2 ) ; j++ ){
-                if(i===r && j===c ){ continue  ;} 
-                if( arr[i][j]===num ){ return false ; }
+                if(i==r && j==c ){ continue  ;} 
+                if( arr[i][j]==num ){ return false ; }
             }
         }
         return true ;
@@ -58,7 +57,7 @@ function check( r , c){
 function valid(){
     for( var i=0 ; i<9; i++ ){
         for( var j=0 ; j<9 ; j++ ){
-            if( arr[i][j]=="-" ){ continue ; }
+            if( arr[i][j]==0 ){ continue ; }
             if( check( i , j)==false ){
                 return false ;
             }
@@ -83,13 +82,13 @@ function solve(){
 
         for( var i=0 ; i<9 ; i++ ){
             for( var j=0 ; j<9 ; j++ ){
-                if( arr[i][j]==="-"){
+                if( arr[i][j]==0){
                     r=i ; c=j ;
                     break;
                 }
             }
         }
-        if( r===-1 && c===-1 ){
+        if( r==-1 && c==-1 ){
             return true ;
         }
         for( var i=1 ; i<=9 ; i++){
@@ -100,6 +99,6 @@ function solve(){
                 }
             }
         }
-        arr[r][c] = "-" ;
+        arr[r][c] = 0 ;
         return false ;
 }
