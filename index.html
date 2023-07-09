@@ -4,8 +4,13 @@
         <title>JQuery</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Belanosima&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="heading">SUDOKU SOLVER</div>
         <div class="upper">
         <div class="container" >
                 <div class="innerbox">
@@ -109,9 +114,15 @@
                 </div>
         </div>
     </div>
-        <button id="b1">First Click ME</button>
-        <button id="b2">Solve</button>
-        <button id="b3">Now Solve</button>
+    <div class="upper">
+        <div class="down">
+            <div class="text">STEPS TO SOLVE</div>
+            <button id="b1"> 1. First Click Me to Reset </button>
+            <div class="text1">2. Fill Some Boxes : Make Sure To Fill Only Number Between 1 to 9 </div>
+            <button id="b2">3. Click To Check Filled Sudoku Is Valid Or Not </button>
+            <button id="b3">4. Click To Solve</button>
+        </div>
+    </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
         <script src="./index.js" charset="utf-8"></script>
     </body>
