@@ -43,23 +43,26 @@ input{
     width:100% ;
     display: grid;
     grid-template-columns: 1fr;
-    grid-area: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 2fr 3fr 3fr 3fr 3fr;
 }
 .text{
     text-align: center;
     font-family: 'Hind', sans-serif;
     font-size: 2rem;
-    color:#f1deea ;
+    color:#2A2F4F;
 }
 .text1{
     text-align: center;
     margin-bottom: 10px;
     background-color: whitesmoke;
     color: black;
-    font-weight: b;
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 1.2rem;
 }
 button{
     margin-bottom: 10px ;
+    font-size: 1.2rem;
 }
 .anim{
     opacity: 50%;
