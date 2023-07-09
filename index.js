@@ -6,9 +6,27 @@ function fill(){
     }
 }
 
-document.querySelector("#b1").addEventListener( "click" , fill ) ;
-document.querySelector("#b2").addEventListener( "click" , upload ) ;
-document.querySelector("#b3").addEventListener( "click" , solve1 ) ;
+document.querySelector("#b1").addEventListener( "click" , function(){
+    fill() ;
+    document.querySelector("#b1").classList.add("anim") ;
+    setTimeout( function(){
+        document.querySelector("#b1").classList.remove("anim") ;
+    } , 100 ) ;
+}) ;
+document.querySelector("#b2").addEventListener( "click" , function(){
+    upload() ;
+    document.querySelector("#b2").classList.add("anim") ;
+    setTimeout( function(){
+        document.querySelector("#b2").classList.remove("anim") ;
+    } , 100 ) ;
+});
+document.querySelector("#b3").addEventListener( "click" , function(){
+    solve1();
+    document.querySelector("#b3").classList.add("anim") ;
+    setTimeout( function(){
+        document.querySelector("#b3").classList.remove("anim") ;
+    } , 100 ) ;
+});
 
 let arr = [] ;
 
@@ -22,10 +40,10 @@ function upload(){
         }
     }
     if( valid() ){
-        alert("Valid Sudoku") ;
+        alert("Yes It is Valid Sudoku") ;
     }
     else{
-        alert("Not Valid") ;
+        alert("Not Valid Sudoku : Fill Again") ;
     }
 }
 
@@ -102,3 +120,5 @@ function solve(){
         arr[r][c] = 0 ;
         return false ;
 }
+
+
